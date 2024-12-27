@@ -2,6 +2,7 @@
 
 module Authorio
   class AuthorioController < ActionController::Base
+    protect_from_forgery with: :exception
     layout "authorio/main"
 
     helper_method :logged_in?, :rememberable?, :current_user,

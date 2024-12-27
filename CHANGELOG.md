@@ -14,7 +14,7 @@ it is properly validated against the verifier.
 - Removed offline_access scope since IndieAuth will not be requiring that 940414a0584b20a2c3551308c766b32ce792fd91
 - Fix: Legacy clients without PKCE raised exception 0884f2c35cd8da3035303e8cdc0fc32564dca866
 
-## [v0.8.4](https://github.com/reiterate-app/authorio/tree/v0.8.4)  (2021-08-18)
+## [v0.8.4](https://github.com/reiterate-app/authorio/tree/v0.8.4) (2021-08-18)
 
 No new features in this release, but a major restructuring of the underlying code. In particular,
 user profile URLs have changed. They are no longer specified explicitly per-user, but are instead
@@ -37,11 +37,11 @@ This version requires migrations if you are upgrading from 0.8.2. Rerun `rails a
 **Enhancements**
 
 - Support for user profiles
-  * Visit authorio root to set up your profile
+  - Visit authorio root to set up your profile
 - Support for profile and email scope
-  * If an authenticating client requests your profile, you can approve the request on the
+  - If an authenticating client requests your profile, you can approve the request on the
     login screen
-  * Uncheck the requested scopes to remain anonymous
+  - Uncheck the requested scopes to remain anonymous
 - Refactored session code. There are now two kinds of sessions, temporary (until window closes)
   and permanent (remember-me)
 - Sessions controller to manage new session data
@@ -56,8 +56,8 @@ This version requires migrations if you are upgrading from 0.8.2. Rerun `rails a
 - Fixed Autoloaded constant warning by wrapping initializer
 - Fixed 'Invlad User' typo
 - Added token expiry
-    * Added new token_expiration in the config (default 4 weeks)
-    * If you are upgrading from v0.8.1, you *must rerun* `rails authorio:install:migrations` and `rails db:migrate`
+  - Added new token_expiration in the config (default 4 weeks)
+  - If you are upgrading from v0.8.1, you _must rerun_ `rails authorio:install:migrations` and `rails db:migrate`
 - Fixed an issue with CSRF on authentication form
 
 **Enhancements**
@@ -75,7 +75,6 @@ This version requires migrations if you are upgrading from 0.8.2. Rerun `rails a
 - Documentation cleanup. Filled out README and cleaned up gemspec
 - Added test for invalid tokens
 - Password field is autofocused on page load
-
 
 ## [v0.8.0](https://github.com/reiterate-app/authorio/tree/523c3ad61a21a870cc283b9c1d2c675f47a9ec82) (2021-07-10)
 

@@ -1,8 +1,4 @@
-Style/Documentation:
-  Enabled: false
-Lint/SendWithMixinArgument:
-  Enabled: false
-Metrics/AbcSize:
-  CountRepeatedAttributes: false
-AllCops:
-  NewCops: enable
+# Omakase Ruby styling for Rails
+inherit_gem:
+  rubocop-rails-omakase: rubocop.yml
+# Your own specialized rules go here

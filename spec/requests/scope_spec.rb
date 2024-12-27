@@ -46,7 +46,7 @@ RSpec.describe 'Auth Scope', type: :request do
   it 'hides email if requested' do
     params[:scope] = 'profile email'
     get '/authorio/auth', params: params
-    post_params[:scope] = { scope: ['profile'] }
+    post_params[:scope] = { scope: [ 'profile' ] }
     post '/authorio/user/authorize', params: post_params
 
     verify_params[:code] = Authorio::Request.first.code

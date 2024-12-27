@@ -1,4 +1,4 @@
-require 'byebug'
+require "byebug"
 
 Rails.application.routes.draw do
   root to: "application#index"

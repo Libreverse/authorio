@@ -1,13 +1,13 @@
 require_relative "lib/authorio/version"
 
 Gem::Specification.new do |spec|
-  spec.name        = "authorio"
+  spec.name        = "authorio-updated"
   spec.version     = Authorio::VERSION
-  spec.authors     = ["Michael Meckler"]
-  spec.email       = ["rattroupe@reiterate-app.com"]
+  spec.authors     = [ "Michael Meckler, Libreverse Contributors" ]
+  spec.email       = [ "rattroupe@reiterate-app.com", "resists-oysters.0s@icloud.com" ]
   spec.homepage    = "https://blog.reiterate.app/tag/authorio/"
-  spec.summary     = "Indieauth Authentication endpoint for Rails"
-  spec.description = "Rails engine to add IndieAuth authentication endpoint functionality"
+  spec.summary     = "updated version of the Indieauth Authentication endpoint for Rails"
+  spec.description = "updated version of the Rails engine to add IndieAuth authentication endpoint functionality"
   spec.license     = "MIT"
 
   spec.required_ruby_version = '~> 3.0'
@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
 
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  spec.add_dependency "rails", ">= 7", "< 9"
+  spec.add_dependency "rails", "~> 8"
   spec.add_dependency "bcrypt", "~> 3.0"
   spec.add_dependency "jbuilder", "~> 2.0"
   spec.add_development_dependency "factory_bot_rails", "~> 6.0"

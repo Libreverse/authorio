@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2021_08_31_155106) do
-
   create_table "authorio_requests", force: :cascade do |t|
     t.string "code"
     t.string "redirect_uri"
@@ -21,7 +20,7 @@ ActiveRecord::Schema.define(version: 2021_08_31_155106) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "code_challenge"
-    t.index ["authorio_user_id"], name: "index_authorio_requests_on_authorio_user_id"
+    t.index [ "authorio_user_id" ], name: "index_authorio_requests_on_authorio_user_id"
   end
 
   create_table "authorio_sessions", force: :cascade do |t|
@@ -31,7 +30,7 @@ ActiveRecord::Schema.define(version: 2021_08_31_155106) do
     t.datetime "expires_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["authorio_user_id"], name: "index_authorio_sessions_on_authorio_user_id"
+    t.index [ "authorio_user_id" ], name: "index_authorio_sessions_on_authorio_user_id"
   end
 
   create_table "authorio_tokens", force: :cascade do |t|
@@ -42,8 +41,8 @@ ActiveRecord::Schema.define(version: 2021_08_31_155106) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "expires_at"
-    t.index ["auth_token"], name: "index_authorio_tokens_on_auth_token", unique: true
-    t.index ["authorio_user_id"], name: "index_authorio_tokens_on_authorio_user_id"
+    t.index [ "auth_token" ], name: "index_authorio_tokens_on_auth_token", unique: true
+    t.index [ "authorio_user_id" ], name: "index_authorio_tokens_on_authorio_user_id"
   end
 
   create_table "authorio_users", force: :cascade do |t|
@@ -55,7 +54,7 @@ ActiveRecord::Schema.define(version: 2021_08_31_155106) do
     t.string "full_name"
     t.string "url"
     t.string "photo"
-    t.index ["username"], name: "index_authorio_users_on_username", unique: true
+    t.index [ "username" ], name: "index_authorio_users_on_username", unique: true
   end
 
   add_foreign_key "authorio_requests", "authorio_users"

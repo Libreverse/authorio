@@ -17,7 +17,7 @@ module Authorio
     # PATCH /users/:id
     def update
       User.find(params[:id]).update(user_params)
-      flash[:info] = 'Profile Saved'
+      flash[:info] = "Profile Saved"
       redirect_to edit_user_path
     end
 

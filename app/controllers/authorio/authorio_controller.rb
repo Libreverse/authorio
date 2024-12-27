@@ -2,7 +2,7 @@
 
 module Authorio
   class AuthorioController < ActionController::Base
-    layout 'authorio/main'
+    layout "authorio/main"
 
     helper_method :logged_in?, :rememberable?, :current_user,
                   :user_scope_description, :profile_url
@@ -66,13 +66,13 @@ module Authorio
 
     def redirect_back_with_error(error)
       flash[:alert] = error
-      redirect_back fallback_location: Authorio.authorization_path.prepend('/'), allow_other_host: false
+      redirect_back fallback_location: Authorio.authorization_path.prepend("/"), allow_other_host: false
     end
 
     def bearer_token
       bearer = /^Bearer /
-      header = request.headers['Authorization']
-      header.gsub(bearer, '') if header&.match(bearer)
+      header = request.headers["Authorization"]
+      header.gsub(bearer, "") if header&.match(bearer)
     end
   end
 end

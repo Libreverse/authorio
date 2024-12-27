@@ -17,7 +17,7 @@ module Authorio
       session[:user_id] = user.id
       redirect_to edit_user_path(user)
     rescue Exceptions::InvalidPassword
-      redirect_back_with_error 'Incorrect password. Try again.'
+      redirect_back_with_error "Incorrect password. Try again."
     end
 
     # DELETE /session

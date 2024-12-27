@@ -2,7 +2,7 @@
 
 module Authorio
   class Request < ApplicationRecord
-    belongs_to :authorio_user, class_name: '::Authorio::User'
+    belongs_to :authorio_user, class_name: "::Authorio::User"
 
     validates_presence_of :code, :redirect_uri, :client
 
@@ -29,7 +29,7 @@ module Authorio
       return true if code_challenge.blank?
 
       sha256 = Digest::SHA256.digest verifier
-      Base64.urlsafe_encode64(sha256).sub(/=*$/, '') == code_challenge
+      Base64.urlsafe_encode64(sha256).sub(/=*$/, "") == code_challenge
     end
 
     def self.user_scope_description(scope)
@@ -43,12 +43,12 @@ module Authorio
     end
 
     def sweep_requests
-      Request.where(client:, authorio_user:).destroy_all
+      Request.where(client: client, authorio_user: authorio_user).destroy_all
     end
 
     USER_SCOPE_DESCRIPTION = {
-      profile: 'View basic profile information',
-      email: 'View your email address'
+      profile: "View basic profile information",
+      email: "View your email address"
     }.freeze
   end
 end

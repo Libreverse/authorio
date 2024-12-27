@@ -6,9 +6,9 @@ module Authorio
                   :local_session_lifetime, :multiuser
 
     def initialize
-      @authorization_endpoint = 'auth'
-      @token_endpoint = 'token'
-      @mount_point = 'authorio'
+      @authorization_endpoint = "auth"
+      @token_endpoint = "token"
+      @mount_point = "authorio"
       @token_expiration = 4.weeks
       @local_session_lifetime = nil
       @multiuser = false
